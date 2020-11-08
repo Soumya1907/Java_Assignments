@@ -1,0 +1,30 @@
+
+/******************************************************************************
+Question:
+Write a code segment that result a “NullPointerException”.
+Write necessary catch block to catch it.
+Also write a ‘finally block’.Writeappropriatestatementsinit. 
+
+*******************************************************************************/
+
+public class Main
+{
+	public static void main(String[] args) {
+		try{
+		    throw new NullPointerException("Demo");
+		}
+		catch(Exception e){
+		    System.out.println("The Error is caught;the error is:"+e);
+		}
+		finally{
+		    System.out.println("Finally all Exceptions are solved successfully" );
+		}
+	}
+}
+/******************************************************************************
+OuTput:
+
+The Error is caught;the error is:java.lang.NullPointerException: Demo                                                         
+Finally all Exceptions are solved successfully 
+
+*******************************************************************************/
