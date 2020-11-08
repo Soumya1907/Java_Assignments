@@ -1,0 +1,58 @@
+/******************************************************************************
+Question:
+Write a method validName(String name) which check if the nameisvalidname,
+throwInputMismatchExceptionifinvalid, Returnthenameifisisvalid.
+In themain()method ask theuser to enter a name and their validity through validName() 
+method andaddtryandcatchblockaroundappropriatestatements.
+
+*******************************************************************************/
+import java.util.*;
+public class Main
+{
+    static String validName(String s)
+    {
+        try{
+             for (int i = 0; i < s.length(); i++){
+                if (Character.isDigit(s.charAt(i)) == true){
+                    throw new InputMismatchException("InputMismatchException");
+                }
+             }
+            return "OUTPUT:"+s;
+        }
+        catch(Exception e){
+		    System.out.println("The Error is caught;the error is:"+e);
+		    return "Invalid";
+		}
+        
+    }
+	public static void main(String[] args) {
+		
+		try{
+		    System.out.println("Enter a String to check if it is valid or not");
+		    Scanner sc= new Scanner(System.in);
+		    String s=sc.next();
+		    System.out.println(validName(s));
+		}
+		catch(Exception e){
+		    System.out.println("The Error is caught;the error is:"+e);
+		}
+		finally{
+		    System.out.println("Finally all Exceptions are solved successfully" );
+		}
+	}
+}
+/******************************************************************************
+OUTPUT 1:
+Enter a String to check if it is valid or not
+Soum654
+The Error is caught;the error is:java.util.InputMismatchException: InputMismatchException
+Invalid
+Finally all Exceptions are solved successfully
+
+OUTPUT 2:
+Enter a String to check if it is valid or not
+SOUMYA
+OUTPUT:SOUMYA
+Finally all Exceptions are solved successfully
+
+*******************************************************************************/
